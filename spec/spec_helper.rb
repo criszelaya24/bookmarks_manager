@@ -12,6 +12,20 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+# Set the environment to "test"
+ENV['RACK_ENV'] = 'test'
+
+# Bring in the contents of the `app.rb` file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+# Require all the testing gems
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+
+# Tell Capybara to talk to BookmarkManager
+Capybara.app = BookmarkManager
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
