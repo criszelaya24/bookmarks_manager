@@ -13,7 +13,7 @@
 # it.
 #
 # Set the environment to "test"
-ENV['RACK_ENV'] = 'test'
+#ENV['RACK_ENV'] = 'test'
 
 # Bring in the contents of the `app.rb` file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
@@ -22,6 +22,15 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require_relative './setup_test_database'
+
+ENV['ENVIRONMENT'] = 'test'
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database = true
+  end
+end
 
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = BookmarkManager
