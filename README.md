@@ -7,6 +7,12 @@ So that I can quickly go to web sites I regularly visit
 I'd like to see a list of bookmarks
 ```
 
+```
+As a User
+So I can save all the websites I visited most
+I want to add a bookmark to a bookmarK mANAGER
+```
+
 ## How to use and set up with DB
 
 ### DataBase

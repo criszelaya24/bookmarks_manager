@@ -1,0 +1,2 @@
+# Wich is the best way to settle down a DB? by terminal or gui?
+# What is the diference between development and test environment?
