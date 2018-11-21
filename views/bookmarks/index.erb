@@ -43,9 +43,9 @@
   <div class="col-sm-6" style="margin-top: 1.5%">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><%= bookmark %></h5>
+        <h5 class="card-title"><%= bookmark.title %></h5>
         <p class="card-text">Some details from the page, extracting later from the BD</p>
-        <a target="_blank" href="<%= bookmark %>" class="btn btn-primary">Visit!</a>
+        <a target="_blank" href="<%= bookmark.url %>" class="btn btn-primary">Visit <%= bookmark.title %>!</a>
       </div>
     </div>
   </div>

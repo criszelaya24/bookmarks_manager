@@ -43,9 +43,12 @@
       <div class="card-body">
       	<form action="/bookmarks" method="post" class="container" >
       		<div class="form-group">
-      			<label for="exampleInputEmail1">URL</label>
-      			<input type="url" name="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter url">
-      			<small id="emailHelp" class="form-text text-muted">Add your favorite bookmarks</small>
+      			<label>URL</label>
+      			<input type="url" name="url" class="form-control" id="exampleInputEmail1" placeholder="Enter url">
+      			<small class="form-text text-muted">Add your favorite bookmarks</small>
+      			<label>Tittle</label>
+      			<input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Enter url">
+      			<small class="form-text text-muted">Add a tittle to your url</small>
       		</div>
       		<button type="submit" class="btn btn-primary">Submit</button>
       	</form>
