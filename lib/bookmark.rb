@@ -7,7 +7,7 @@ class Bookmark
 		@url = url 
 	end
 	def self.all
-		result = DatabaseConnection.query('SELECT * from bookmarks')
+		result = DatabaseConnection.query('SELECT * FROM bookmarks')
       	result.map do |bookmark|
       		Bookmark.new(id: bookmark['id'], url: bookmark['url'], title: bookmark['title'])
       	end
@@ -19,7 +19,7 @@ class Bookmark
 	 end
 
 	 def self.delete(id:)
-	 	result = DatabaseConnection.query("DELETE from bookmarks Where id = '#{id}';")
+	 	DatabaseConnection.query("DELETE FROM bookmarks WHERE id = #{id}")
 	 end
 
 	 def self.update(id:, url:, title:)
