@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/bookmark.rb'
+require_relative './database_connection_setup.rb'
 
 class BookmarkManager < Sinatra::Base
 	enable :sessions, :method_override
@@ -37,8 +38,6 @@ class BookmarkManager < Sinatra::Base
 		@bookmark = Bookmark.find(id: params[:id])
 		erb(:'/bookmarks/edit')
 	end
-
-
 
 	run! if app_file == $0
 end
