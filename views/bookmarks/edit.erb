@@ -31,33 +31,33 @@
           <ul class="navbar-nav ml-auto">
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/bookmarks/new">Create</a>
+              <a class="nav-link" href="/bookmarks">Bookmarks</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="row" style="margin-top: 4%">
-
-<% @bookmarks.each do |bookmark| %>
   <div class="col-sm-6" style="margin-top: 1.5%">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title" id="bookmark-<%= bookmark.id %>" ><%= bookmark.title %></h5>
-        <p class="card-text">Some details from the page, extracting later from the BD</p>
-        <div class="delete edit">
-        <a target="_blank" href="<%= bookmark.url %>" class="btn btn-primary">Visit <%= bookmark.title %>!</a>
-        <a id="Delete" href="/bookmarks/<%= bookmark.id %>" class="btn btn-danger">Delete</a>
-        <a class="btn btn-warning" href="/bookmarks/<%= bookmark.id %>/edit">Edit</a>
-        </div>
-<!--      <form action="/bookmarks/<%= bookmark.id %>" method="post">
-     	<button type="submit" class="btn btn-primary">Delete</button>
-    </form>  -->
+      	<form action="/bookmarks/<%= @bookmark.id %>" method="post" class="container">
+      		<div class="form-group">
+      			<label>URL</label>
+      			<input type="hidden" name="_method" value="PATCH" />
+      			<input type="url" name="url" class="form-control" value="<%= @bookmark.url%>" placeholder="<%= @bookmark.url%>">
+      			<small class="form-text text-muted">Edit your favorite bookmarks</small>
+      			<label>Tittle</label>
+      			<input type="text" name="title" class="form-control" value="<%= @bookmark.title%>" placeholder="<%= @bookmark.title%>">
+      			<small class="form-text text-muted">Edit a tittle to your url</small>
+      		</div>
+      		<button type="submit" class="btn btn-primary">Submit</button>
+      	</form>
       </div>
     </div>
   </div>
-   <% end %>
    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

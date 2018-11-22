@@ -17,6 +17,11 @@ class BookmarkManager < Sinatra::Base
 		Bookmark.delete(id: params[:id])
 		redirect '/bookmarks'
 	end
+
+	patch '/bookmarks/:id' do
+		Bookmark.update(id: params[:id], url: params[:url], title: params[:title])
+		redirect('/bookmarks')
+	end
 						# End Method for CRUD
 
 	get '/bookmarks' do
@@ -27,6 +32,13 @@ class BookmarkManager < Sinatra::Base
 	get '/bookmarks/new' do
 		erb :'bookmarks/new'
 	end
+
+	get '/bookmarks/:id/edit' do
+		@bookmark = Bookmark.find(id: params[:id])
+		erb(:'/bookmarks/edit')
+	end
+
+
 
 	run! if app_file == $0
 end
