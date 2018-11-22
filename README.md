@@ -10,9 +10,14 @@ I'd like to see a list of bookmarks
 ```
 As a User
 So I can save all the websites I visited most
-I want to add a bookmark to a bookmarK mANAGER
+I want to add a bookmark to a Bookmark Manager
 ```
 
+```
+As a user
+So I can remove my bookmark from Bookmark Manager
+I want to delete a bookmark
+```
 ## How to use and set up with DB
 
 ### DataBase

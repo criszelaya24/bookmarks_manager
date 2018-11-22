@@ -43,9 +43,15 @@
   <div class="col-sm-6" style="margin-top: 1.5%">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title"><%= bookmark.title %></h5>
+        <h5 class="card-title" id="bookmark-<%= bookmark.id %>" ><%= bookmark.title %></h5>
         <p class="card-text">Some details from the page, extracting later from the BD</p>
+        <div class="item">
         <a target="_blank" href="<%= bookmark.url %>" class="btn btn-primary">Visit <%= bookmark.title %>!</a>
+        <a id="Delete" href="/bookmarks/<%= bookmark.id %>" class="btn btn-danger">Delete</a>
+        </div>
+<!--      <form action="/bookmarks/<%= bookmark.id %>" method="post">
+     	<button type="submit" class="btn btn-primary">Delete</button>
+    </form>  -->
       </div>
     </div>
   </div>
