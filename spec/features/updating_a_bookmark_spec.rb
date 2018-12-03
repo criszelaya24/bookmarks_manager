@@ -6,11 +6,11 @@ feature 'Updating a bookmark' do
 
 		first('.edit').click_link('Edit')
 
-		fill_in('url', with: "http://www.snakersacademy.com")
-		fill_in('title', with: "Snakers Academy")
+		fill_in('url', with: "http://www.academy.com")
+		fill_in('title', with: "Academy")
 		click_button('Submit')
 
 		#expect(page).not_to have_link('Makers Academy', href: 'http://www.makersacademy.com')
-    	expect(page).to have_link('Snakers Academy', href: 'http://www.snakersacademy.com')
+    	expect(page).to have_link('Academy', href: 'http://www.academy.com')
 	end
 end

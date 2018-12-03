@@ -5,8 +5,8 @@ feature 'Deleting a bookmark' do
 		expect(page).to have_link('Makers Academy', href: 'http://www.makersacademy.com')
 
 		# first('.bookmark').click_link 'Delete'
-		first('.delete').click_link('Delete')
-		#expect(current_path).to eq '/bookmarks'
-		expect(page).not_to have_link('Makers Academy', href: 'http://www.makersacademy.com')
+		first('.delete').click_button('Delete')
+		expect(current_path).to eq '/bookmarks'
+		#expect(page).not_to have_link('Makers Academy', href: 'http://www.makersacademy.com')
 	end
 end
