@@ -1,4 +1,8 @@
+before_install:
+  - mysql -e 'CREATE DATABASE bookmark_manager_test;'
+   - mysql -e 'CREATE DATABASE bookmark_manager;'
 language: ruby
-rvm:
- - 2.2
- - jruby
+rvm: 2.2
+script:
+  - rspec
+  - ruby app.rb
