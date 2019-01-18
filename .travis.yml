@@ -1,6 +1,6 @@
 before_install:
-  - mysql -e 'CREATE DATABASE bookmark_manager_test;'
-   - mysql -e 'CREATE DATABASE bookmark_manager;'
+  - psql -c 'CREATE DATABASE bookmark_manager_test;'
+   - mpsql -c'CREATE DATABASE bookmark_manager;'
 language: ruby
 rvm: 2.2
 script:
