@@ -1,6 +1,6 @@
 before_install:
-  - psql -c 'CREATE DATABASE bookmark_manager_test;'
-   - mpsql -c'CREATE DATABASE bookmark_manager;'
+  - psql -c 'CREATE DATABASE bookmark_manager_test;' -U postgres
+  - psql -c 'CREATE DATABASE bookmark_manager;' -U postgres
 language: ruby
 rvm: 2.2
 script:
