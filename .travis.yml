@@ -1,8 +1,9 @@
 before_install:
   - psql -c 'CREATE DATABASE bookmark_manager_test;' -U postgres
   - psql -c 'CREATE DATABASE bookmark_manager;' -U postgres
+  - bundle install
 language: ruby
-rvm: 2.4
+rvm: 2.4.4
 script:
   - rspec
   - ruby app.rb
