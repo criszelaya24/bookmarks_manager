@@ -1,16 +1,9 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID= ee901580ed6477143f224fdb055567374d3566bdf993bc559fefeeb9f1fdd31a
 language: ruby
-before_script:
-  - psql -c 'CREATE DATABASE bookmark_manager_test;' -U postgres
-  - psql -c 'CREATE DATABASE bookmark_manager;' -U postgres
-script:
-  - bundle install
-  - rspec
-deploy:
-  provider: heroku
-  api_key:
-    secure: 8703e2c7-81e3-43b5-b7a6-3b668f81ac95
-  app: calm-mountain-95160
-  on:
-    repo: criszelaya24/bookmarks_manager
-    branch: master
-  skip_cleanup: true
+rvm:
+  - 2.5.0
+before_install: gem install bundler -v 1.16.1
+notifications:
+  - false
