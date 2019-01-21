@@ -1,9 +1,10 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID= ee901580ed6477143f224fdb055567374d3566bdf993bc559fefeeb9f1fdd31a
 language: ruby
 rvm:
-  - 2.5.0
-before_install: gem install bundler -v 1.16.1
-notifications:
-  - false
+- 2.5.1
+script:
+- bundle exec rspec spec/
+before_install:
+- gem update --system
+- gem install bundler
+after_script:
+  - bundle exec rake coveralls:push
