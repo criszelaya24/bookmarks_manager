@@ -7,3 +7,4 @@ gem 'pg'
 gem 'simplecov'
 gem 'simplecov-console'
 gem 'codeclimate-test-reporter'
+gem 'coveralls', require: false
