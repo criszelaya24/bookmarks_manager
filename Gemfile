@@ -8,7 +8,6 @@ gem 'simplecov'
 gem 'simplecov-console'
 gem 'codeclimate-test-reporter'
 gem 'coveralls', require: false
-gem 'rake', '~> 11.2', '>= 11.2.2'
 group :production do
   gem "puma"
 end
